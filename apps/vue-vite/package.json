@@ -1,0 +1,27 @@
+{
+  "name": "vue-vite",
+  "version": "1.0.0",
+  "private": true,
+  "author": "DTNA DTO",
+  "license": "ISC",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 9080",
+    "lint": "eslint --ext .js,.vue ."
+  },
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.2",
+    "eslint-vue-airbnb": "*",
+    "sass": "^1.49.9",
+    "vite": "^2.8.4"
+  },
+  "bundledDependencies": [
+    "vite",
+    "@vitejs/plugin-vue",
+    "vite-plugin-singlefile"
+  ]
+}

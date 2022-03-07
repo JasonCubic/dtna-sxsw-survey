@@ -1,0 +1,53 @@
+{
+  "name": "dtna-sxsw-survey",
+  "version": "1.0.0",
+  "description": "DTNA SXSW 2022 Survey",
+  "private": true,
+  "packageManager": "yarn@1.17.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "cross-env FORCE_COLOR=1 turbo run build",
+    "dev": "cross-env FORCE_COLOR=1 turbo run dev --parallel",
+    "lint": "cross-env FORCE_COLOR=1 turbo run lint",
+    "test": "cross-env FORCE_COLOR=1 turbo run test",
+    "preview": "cross-env FORCE_COLOR=1 turbo run preview --scope=*vue-vite*",
+    "clean": "npx rimraf ./**/{node_modules,.eslintcache,apps/vue-vite/dist,.turbo}"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "turbo": "^1.1.5"
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.17.3",
+    "node": ">= 10.14.1"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      },
+      "test": {
+        "outputs": []
+      },
+      "preview": {
+        "cache": false,
+        "outputs": []
+      }
+    }
+  }
+}

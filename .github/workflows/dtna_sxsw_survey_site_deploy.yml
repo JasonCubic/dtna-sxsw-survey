@@ -1,0 +1,33 @@
+name: dtna_sxsw_survey_site_deploy
+
+on: workflow_dispatch
+
+jobs:
+  deploy_site:
+    name: DTNA SXSW Survey Site Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: lint project
+        run: yarn run lint
+
+      - name: Build vue frontend
+        run: yarn run build
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: apps/vue-vite/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
