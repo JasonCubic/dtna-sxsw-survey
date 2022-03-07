@@ -3,7 +3,6 @@ import { fileURLToPath, URL } from 'url';
 import vue from '@vitejs/plugin-vue';
 
 const config = defineConfig({
-  base: '/dtna-sxsw-survey/',
   plugins: [vue()],
   resolve: {
     alias: {
