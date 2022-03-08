@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import ModalTemplate from './ModalTemplate.vue';
 
-const showThankYouModal = ref(true);
+const showThankYouModal = ref(false);
 const showFormValidation = ref(false);
 const formIsSubmitting = ref(false);
 const surveyForm = ref(null);
