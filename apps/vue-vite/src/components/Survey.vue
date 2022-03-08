@@ -76,7 +76,7 @@ function handleFormSubmitted(event) {
 </script>
 
 <template>
-  <div class="container p-4 mb-4 bg-black-transparent">
+  <div class="container p-3 mb-4 bg-black-transparent">
     <!-- <div class="col-lg-6 offset-lg-3"> -->
     <div class="col">
       <form
@@ -227,6 +227,7 @@ function handleFormSubmitted(event) {
 
 .form-control {
   font-weight: 600;
+  padding: 0.75rem;
 
   // color: #b2b2b2;
 }

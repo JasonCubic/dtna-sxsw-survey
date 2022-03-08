@@ -8,8 +8,10 @@ import Survey from './components/Survey.vue';
       <div class="container">
         <a class="navbar-brand" href="#"><img src="src/assets/DTNA_Daimler_Truck_white.svg" class="img-fluid dt-logo" alt="SXSW Logo"></a>
         <div class="sxsw-container">
-          <img src="src/assets/sxsw-logo-black.svg" class="img-fluid sxsw-logo" alt="SXSW Logo">
-          <small class="sxsw-text">CONFERENCE 2022</small>
+          <div class="wrapper">
+            <img src="src/assets/sxsw-logo-black.svg" class="img-fluid sxsw-logo" alt="SXSW Logo">
+            <small class="sxsw-text">2022</small>
+          </div>
         </div>
       </div>
     </nav>
@@ -34,25 +36,32 @@ import Survey from './components/Survey.vue';
 h1.survey-cta {
   font-size: 1.3em;
   font-weight: 600;
+  padding-left: 10px;
 }
 
 .dt-logo {
   width: 175px;
   max-height: 50px;
+  margin-left: 5px;
+}
+
+.wrapper {
+  position: relative;
+  top: 15px;
 }
 
 .sxsw-logo {
-  min-width: 190px;
+  min-width: 193px;
   height: 50px;
   position: absolute;
-  right: 10px;
-  top: 45px;
+  right: 0;
+  display: block;
 }
 
 .sxsw-text {
   position: relative;
-  top: 65px;
-  right: 20px;
+  top: 39px;
+  left: -24px;
 }
 
 .navbar.bg-dark {
