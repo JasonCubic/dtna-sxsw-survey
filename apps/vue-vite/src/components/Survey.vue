@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import ModalTemplate from './ModalTemplate.vue';
 
-const showThankYouModal = ref(false);
+const showThankYouModal = ref(true);
 const showFormValidation = ref(false);
 const formIsSubmitting = ref(false);
 const surveyForm = ref(null);
@@ -204,14 +204,21 @@ function handleFormSubmitted(event) {
 
   <ModalTemplate v-show="showThankYouModal" @close="showThankYouModal = false">
     <template #header>
-      <h1>Grattitude</h1>
+      <h1>Thank you!</h1>
     </template>
     <template #body>
-      <p>Your survey results have been received.  We appreciate you taking the time to fill out our survey.</p>
-      <p>Thank You.</p>
+      <div class="wrapper text-center">
+            <img src="src/assets/check-circle.svg" class="img-fluid check-icon" alt="check">
+          </div>
+      <p class="text-center">Someone from Daimler Truck North America will be in touch soon!</p>
+      <p class="text-center">In the meantime check out our open positions on LinkedIn.</p>
+      <div class="d-grid">
+        <a id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/company/daimlertrucknorthamerica" role="button">
+          <img src="src/assets/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkIn"></a>
+        </div>
     </template>
     <template #footer>
-      <button class="btn btn-primary" @click="showThankYouModal = false">OK</button>
+      <button class="btn btn-link text-center" @click="showThankYouModal = false">Close</button>
     </template>
   </ModalTemplate>
 </template>
@@ -237,7 +244,7 @@ function handleFormSubmitted(event) {
 }
 
 .form-control:placeholder { /* Mozilla Firefox 4 to 18 */
-  ccolor: #b2b2b2;
+  color: #b2b2b2;
 }
 
 .form-control::placeholder { /* Mozilla Firefox 19+ */
@@ -254,5 +261,14 @@ button#submit-btn {
   height: 85px;
   border: 1px solid #fff;
   background-color: #000;
+}
+
+.check-icon {
+  height: 58px;
+  margin-bottom: 43px;
+}
+
+#linkedin-btn {
+  background-color: #0077b5;
 }
 </style>

@@ -6,7 +6,8 @@ import Survey from './components/Survey.vue';
   <header>
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="src/assets/DTNA_Daimler_Truck_white.svg" class="img-fluid dt-logo" alt="SXSW Logo"></a>
+        <a class="navbar-brand" href="https://daimler-trucksnorthamerica.com">
+        <img src="src/assets/DTNA_Daimler_Truck_white.svg" class="img-fluid dt-logo" alt="Daimler Trucks Logo"></a>
         <div class="sxsw-container">
           <div class="wrapper">
             <img src="src/assets/sxsw-logo-black.svg" class="img-fluid sxsw-logo" alt="SXSW Logo">

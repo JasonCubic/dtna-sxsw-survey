@@ -3,8 +3,8 @@
     <div class="modal-mask">
       <div class="modal-dialog">
         <ClickWatcher @click-outside="$emit('close')">
-          <div class="modal-content">
-            <div class="modal-header">
+          <div class="modal-content bg-black">
+            <div class="modal-header justify-content-center">
               <slot name="header">
                 default header
               </slot>
@@ -19,7 +19,7 @@
               </slot>
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-center">
               <slot name="footer">
                 default footer
                 <button class="btn btn-default" @click="$emit('close')">
@@ -40,7 +40,7 @@ import ClickWatcher from './ClickWatcher.vue';
 defineEmits(['close']);
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /*
  * https://vuejs.org/guide/built-ins/transition.html#css-based-transitions
  */
@@ -51,13 +51,26 @@ defineEmits(['close']);
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0 / 50%);
+  background-color: rgb(0 0 0 / 85%);
   display: table;
   transition: opacity 0.3s ease;
 }
 
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
 .modal-content {
   transition: all 0.3s ease;
+
+  &.bg-black {
+    background-color: #000;
+    border: 1px solid #fff;
+  }
 }
 
 .modal-enter-active,
