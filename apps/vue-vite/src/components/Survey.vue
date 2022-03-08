@@ -76,127 +76,130 @@ function handleFormSubmitted(event) {
 </script>
 
 <template>
-  <h1>DTNA SXSW Survey</h1>
-
-  <form
-    :class="{ 'needs-validation': !showFormValidation }"
-    ref="surveyForm"
-    @submit.prevent="handleFormSubmitted"
-    novalidate
-  >
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <label for="surveyee-name" class="col-md-4 col-lg-3 col-form-label">
-        Name
-      </label>
-      <div class="col-md-8 col-lg-9">
-        <input
-          type="text"
-          class="form-control"
-          name="surveyeeName"
-          id="surveyee-name"
-          placeholder="First and Last Name"
-          maxlength="60"
-          :disabled="formIsSubmitting === true"
-          required
-          pattern=".*\S+.*"
-        >
-        <div class="invalid-feedback">Please enter your name.</div>
-      </div>
-    </div>
-
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <label for="surveyee-email" class="col-md-4 col-lg-3 col-form-label">
-        E-Mail
-      </label>
-      <div class="col-md-8 col-lg-9">
-        <input
-          type="email"
-          class="form-control"
-          name="surveyeeEmail"
-          id="surveyee-email"
-          placeholder="E-Mail"
-          maxlength="60"
-          :disabled="formIsSubmitting === true"
-          required
-        >
-        <div class="invalid-feedback">Please enter an email address we can reach you at.</div>
-      </div>
-    </div>
-
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <label for="surveyee-interest" class="col-md-4 col-lg-3 col-form-label">
-        Technology Area's of Interest
-      </label>
-      <div class="col-md-8 col-lg-9">
-        <input
-          type="text"
-          class="form-control"
-          name="surveyeeInterest"
-          id="surveyee-interest"
-          placeholder="Robotics, Self-Driving, AI"
-          maxlength="280"
-          :disabled="formIsSubmitting === true"
-          required
-          pattern=".*\S+.*"
-        >
-        <div class="invalid-feedback">Please let us know what interested you at out booth.</div>
-      </div>
-    </div>
-
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <label for="surveyee-linkedin" class="col-md-4 col-lg-3 col-form-label">
-        Linkedin Profile
-      </label>
-      <div class="col-md-8 col-lg-9">
-        <input
-          type="text"
-          class="form-control"
-          name="surveyeeLinkedin"
-          id="surveyee-linkedin"
-          placeholder="URL to your Linkedin Profile"
-          maxlength="90"
-          :disabled="formIsSubmitting === true"
-        >
-      </div>
-    </div>
-
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <label for="surveyee-comments" class="col-md-4 col-lg-3 col-form-label">
-        Comments
-      </label>
-      <div class="col-md-8 col-lg-9">
-        <textarea
-          class="form-control"
-          name="surveyeeComments"
-          id="surveyee-comments"
-          placeholder="Comments"
-          rows="3"
-          maxlength="2048"
-          :readonly="formIsSubmitting === true"
-        />
-      </div>
-    </div>
-
-    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
-      <div for="surveyee-legal-agreement" class="col">
-        <div class="form-check">
-          <input
-            class="form-check-input" type="checkbox" value="I hereby confirm that dtna is allowed to contact me for recruiting purposes"
-            id="surveyee-agreement"
-            name="surveyeeAgreement"
-            required
-            pattern=".*\S+.*"
-          >
-          <label class="form-check-label" for="surveyee-agreement">
-            I hereby confirm that DTNA is allowed to contact me for recruiting purposes.
+  <div class="container p-4 bg-black-transparent">
+    <div class="col-lg-6 offset-lg-3">
+      <h1>DTNA SXSW Survey</h1>
+      <form
+        :class="{ 'needs-validation': !showFormValidation }"
+        ref="surveyForm"
+        @submit.prevent="handleFormSubmitted"
+        novalidate
+      >
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <label for="surveyee-name" class="col-form-label">
+            Name
           </label>
-          <div class="invalid-feedback">You must agree to be contacted for recruting purposes in order to submit this form.</div>
+          <div class="">
+            <input
+              type="text"
+              class="form-control"
+              name="surveyeeName"
+              id="surveyee-name"
+              placeholder="First and Last Name"
+              maxlength="60"
+              :disabled="formIsSubmitting === true"
+              required
+              pattern=".*\S+.*"
+            >
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <button type="submit" class="btn btn-primary">Submit Survey</button>
-  </form>
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <label for="surveyee-email" class="col-form-label">
+            E-Mail
+          </label>
+          <div class="">
+            <input
+              type="email"
+              class="form-control"
+              name="surveyeeEmail"
+              id="surveyee-email"
+              placeholder="E-Mail"
+              maxlength="60"
+              :disabled="formIsSubmitting === true"
+              required
+            >
+            <div class="invalid-feedback">Please enter an email address we can reach you at.</div>
+          </div>
+        </div>
+
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <label for="surveyee-interest" class="col-form-label">
+            Technology Area's of Interest
+          </label>
+          <div class="">
+            <input
+              type="text"
+              class="form-control"
+              name="surveyeeInterest"
+              id="surveyee-interest"
+              placeholder="Robotics, Self-Driving, AI"
+              maxlength="280"
+              :disabled="formIsSubmitting === true"
+              required
+              pattern=".*\S+.*"
+            >
+            <div class="invalid-feedback">Please let us know what interested you at out booth.</div>
+          </div>
+        </div>
+
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <label for="surveyee-linkedin" class="col-form-label">
+            Linkedin Profile
+          </label>
+          <div class="">
+            <input
+              type="text"
+              class="form-control"
+              name="surveyeeLinkedin"
+              id="surveyee-linkedin"
+              placeholder="URL to your Linkedin Profile"
+              maxlength="90"
+              :disabled="formIsSubmitting === true"
+            >
+          </div>
+        </div>
+
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <label for="surveyee-comments" class="col-form-label">
+            Comments
+          </label>
+          <div class="">
+            <textarea
+              class="form-control"
+              name="surveyeeComments"
+              id="surveyee-comments"
+              placeholder="Comments"
+              rows="3"
+              maxlength="2048"
+              :readonly="formIsSubmitting === true"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+          <div for="surveyee-legal-agreement" class="col">
+            <div class="form-check">
+              <input
+                class="form-check-input" type="checkbox" value="I hereby confirm that dtna is allowed to contact me for recruiting purposes"
+                id="surveyee-agreement"
+                name="surveyeeAgreement"
+                required
+                pattern=".*\S+.*"
+              >
+              <label class="form-check-label" for="surveyee-agreement">
+                I hereby confirm that DTNA is allowed to contact me for recruiting purposes.
+              </label>
+              <div class="invalid-feedback">You must agree to be contacted for recruting purposes in order to submit this form.</div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Survey</button>
+      </form>
+    </div>
+  </div>
 
   <ModalTemplate v-show="showThankYouModal" @close="showThankYouModal = false">
     <template #header>
@@ -211,3 +214,9 @@ function handleFormSubmitted(event) {
     </template>
   </ModalTemplate>
 </template>
+
+<style lang="scss">
+  .bg-black-transparent {
+    background: rgb(0 0 0 / 50%);
+  }
+</style>
