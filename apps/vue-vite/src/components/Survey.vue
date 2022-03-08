@@ -76,9 +76,9 @@ function handleFormSubmitted(event) {
 </script>
 
 <template>
-  <div class="container p-4 bg-black-transparent">
-    <div class="col-lg-6 offset-lg-3">
-      <h1>DTNA SXSW Survey</h1>
+  <div class="container p-4 mb-4 bg-black-transparent">
+    <!-- <div class="col-lg-6 offset-lg-3"> -->
+    <div class="col">
       <form
         :class="{ 'needs-validation': !showFormValidation }"
         ref="surveyForm"
@@ -195,8 +195,9 @@ function handleFormSubmitted(event) {
             </div>
           </div>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit Survey</button>
+        <div class="d-grid">
+          <button type="submit" id="submit-btn" class="btn btn-lg btn-dark">SUBMIT</button>
+        </div>
       </form>
     </div>
   </div>
@@ -216,7 +217,41 @@ function handleFormSubmitted(event) {
 </template>
 
 <style lang="scss">
-  .bg-black-transparent {
-    background: rgb(0 0 0 / 50%);
-  }
+.bg-black-transparent {
+  background: rgb(0 0 0 / 50%);
+}
+
+.col-form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  font-weight: 600;
+
+  // color: #b2b2b2;
+}
+
+.form-control::input-placeholder { /* WebKit browsers */
+  color: #b2b2b2;
+}
+
+.form-control:placeholder { /* Mozilla Firefox 4 to 18 */
+  ccolor: #b2b2b2;
+}
+
+.form-control::placeholder { /* Mozilla Firefox 19+ */
+  color: #b2b2b2;
+}
+
+.form-control:input-placeholder { /* Internet Explorer 10+ */
+  color: #b2b2b2;
+}
+
+button#submit-btn {
+  font-size: 1.75em;
+  font-weight: bold;
+  height: 85px;
+  border: 1px solid #fff;
+  background-color: #000;
+}
 </style>
