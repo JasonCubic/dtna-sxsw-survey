@@ -52,14 +52,24 @@ function isFormValid(submitFormEvent) {
 function handleFormSubmitted(event) {
   showFormValidation.value = true;
   if (!isFormValid(event)) {
-    console.log('survey form is not valid');
+    console.log('survey form data is invalid');
     return;
   }
-  const { surveyeeName, surveyeeEmail, surveyeeInterest } = Object.fromEntries(new FormData(event.target));
+  const {
+    surveyeeName,
+    surveyeeEmail,
+    surveyeeInterest,
+    surveyeeLinkedin,
+    surveyeeComments,
+    surveyeeAgreement,
+  } = Object.fromEntries(new FormData(event.target));
   const surveyFormData = new FormData();
   surveyFormData.append('entry.688542695', surveyeeName);
   surveyFormData.append('entry.454859491', surveyeeEmail);
   surveyFormData.append('entry.558846366', surveyeeInterest);
+  surveyFormData.append('entry.1332797850', surveyeeLinkedin);
+  surveyFormData.append('entry.1787053229', surveyeeComments);
+  surveyFormData.append('entry.173122956', surveyeeAgreement);
   sendSurvey(surveyFormData);
 }
 
@@ -84,7 +94,7 @@ function handleFormSubmitted(event) {
           class="form-control"
           name="surveyeeName"
           id="surveyee-name"
-          placeholder="Your Name"
+          placeholder="First and Last Name"
           maxlength="60"
           :disabled="formIsSubmitting === true"
           required
@@ -104,7 +114,7 @@ function handleFormSubmitted(event) {
           class="form-control"
           name="surveyeeEmail"
           id="surveyee-email"
-          placeholder="Your E-Mail"
+          placeholder="E-Mail"
           maxlength="60"
           :disabled="formIsSubmitting === true"
           required
@@ -115,7 +125,7 @@ function handleFormSubmitted(event) {
 
     <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
       <label for="surveyee-interest" class="col-md-4 col-lg-3 col-form-label">
-        Interests?
+        Technology Area's of Interest
       </label>
       <div class="col-md-8 col-lg-9">
         <input
@@ -123,13 +133,65 @@ function handleFormSubmitted(event) {
           class="form-control"
           name="surveyeeInterest"
           id="surveyee-interest"
-          placeholder="Interests"
-          maxlength="60"
+          placeholder="Robotics, Self-Driving, AI"
+          maxlength="280"
           :disabled="formIsSubmitting === true"
           required
           pattern=".*\S+.*"
         >
         <div class="invalid-feedback">Please let us know what interested you at out booth.</div>
+      </div>
+    </div>
+
+    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+      <label for="surveyee-linkedin" class="col-md-4 col-lg-3 col-form-label">
+        Linkedin Profile
+      </label>
+      <div class="col-md-8 col-lg-9">
+        <input
+          type="text"
+          class="form-control"
+          name="surveyeeLinkedin"
+          id="surveyee-linkedin"
+          placeholder="URL to your Linkedin Profile"
+          maxlength="90"
+          :disabled="formIsSubmitting === true"
+        >
+      </div>
+    </div>
+
+    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+      <label for="surveyee-comments" class="col-md-4 col-lg-3 col-form-label">
+        Comments
+      </label>
+      <div class="col-md-8 col-lg-9">
+        <textarea
+          class="form-control"
+          name="surveyeeComments"
+          id="surveyee-comments"
+          placeholder="Comments"
+          rows="3"
+          maxlength="2048"
+          :readonly="formIsSubmitting === true"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+      <div for="surveyee-legal-agreement" class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input" type="checkbox" value="I hereby confirm that dtna is allowed to contact me for recruiting purposes"
+            id="surveyee-agreement"
+            name="surveyeeAgreement"
+            required
+            pattern=".*\S+.*"
+          >
+          <label class="form-check-label" for="surveyee-agreement">
+            I hereby confirm that DTNA is allowed to contact me for recruiting purposes.
+          </label>
+          <div class="invalid-feedback">You must agree to be contacted for recruting purposes in order to submit this form.</div>
+        </div>
       </div>
     </div>
 
