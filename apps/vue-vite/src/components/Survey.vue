@@ -6,6 +6,7 @@ const showThankYouModal = ref(false);
 const showFormValidation = ref(false);
 const formIsSubmitting = ref(false);
 const surveyForm = ref(null);
+const selectedTechnologyAreasOfInterest = ref([]);
 
 function resetSurveyForm() {
   showFormValidation.value = false;
@@ -124,23 +125,27 @@ function handleFormSubmitted(event) {
           </div>
         </div>
 
-        <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
+        <div class="row mb-2" :class="{ '': true, 'was-validated': showFormValidation }">
           <label for="surveyee-interest" class="col-form-label">
             Technology Area's of Interest
           </label>
           <div class="">
+            <VSelect
+              multiple
+              placeholder="Robotics, Self-Driving, AI"
+              :options="['drones', 'trucks', 'supply line', 'Robotics', 'Big Data', 'Developing']"
+              v-model="selectedTechnologyAreasOfInterest"
+            />
             <input
               type="text"
-              class="form-control"
+              class="form-control d-none"
               name="surveyeeInterest"
               id="surveyee-interest"
-              placeholder="Robotics, Self-Driving, AI"
-              maxlength="280"
-              :disabled="formIsSubmitting === true"
+              :value="selectedTechnologyAreasOfInterest.join(', ')"
               required
               pattern=".*\S+.*"
             >
-            <div class="invalid-feedback">Please let us know what interested you at out booth.</div>
+            <div class="invalid-feedback">Please let us know what your technology area's of interest are.</div>
           </div>
         </div>
 
@@ -208,14 +213,17 @@ function handleFormSubmitted(event) {
     </template>
     <template #body>
       <div class="wrapper text-center">
-            <img src="src/assets/check-circle.svg" class="img-fluid check-icon" alt="check">
-          </div>
+        <img src="/check-circle.svg" class="img-fluid check-icon" alt="check">
+      </div>
       <p class="text-center">Someone from Daimler Truck North America will be in touch soon!</p>
       <p class="text-center">In the meantime check out our open positions on LinkedIn.</p>
       <div class="d-grid">
-        <a id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/company/daimlertrucknorthamerica" role="button">
-          <img src="src/assets/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkIn"></a>
-        </div>
+        <a
+          id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/company/daimlertrucknorthamerica"
+          role="button"
+        >
+          <img src="/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkedIn"></a>
+      </div>
     </template>
     <template #footer>
       <button class="btn btn-link text-center" @click="showThankYouModal = false">Close</button>
