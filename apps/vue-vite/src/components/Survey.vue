@@ -2,11 +2,30 @@
 import { ref } from 'vue';
 import ModalTemplate from './ModalTemplate.vue';
 
+const technologyAreasOfInterestOptions = ref([
+  'Software Engineering',
+  'Product Management',
+  'Sales Engineer',
+  'Technical Program Manager',
+  'Test Engineering',
+  'Electrical Engineering',
+  'Network Engineering',
+  'Sourcing / Supply Chain',
+  'Mechanical Engineering',
+  'Data Science',
+  'Analytics',
+  'Product Strategy',
+]);
+const selectedTechnologyAreasOfInterest = ref([]);
 const showThankYouModal = ref(false);
 const showFormValidation = ref(false);
 const formIsSubmitting = ref(false);
 const surveyForm = ref(null);
-const selectedTechnologyAreasOfInterest = ref([]);
+
+// Creates an array of array values not included in the other given arrays
+function difference(...args) {
+  return args.reduce((a, b) => a.filter((row) => !b.includes(row)));
+}
 
 function resetSurveyForm() {
   showFormValidation.value = false;
@@ -133,7 +152,7 @@ function handleFormSubmitted(event) {
             <VSelect
               multiple
               placeholder="Robotics, Self-Driving, AI"
-              :options="['drones', 'trucks', 'supply line', 'Robotics', 'Big Data', 'Developing']"
+              :options="difference(technologyAreasOfInterestOptions, selectedTechnologyAreasOfInterest)"
               v-model="selectedTechnologyAreasOfInterest"
             />
             <input
