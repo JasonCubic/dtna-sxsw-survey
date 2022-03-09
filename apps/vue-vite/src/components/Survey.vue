@@ -331,7 +331,11 @@ span.vs__selected {
   fill: #fff !important;
 }
 
-#vs1__combobox {
+// #vs1__combobox {
+//   color: #6c757d !important;
+// }
+
+.vs__search::placeholder {
   color: #6c757d !important;
 }
 </style>
