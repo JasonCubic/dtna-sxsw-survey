@@ -21,6 +21,7 @@ const technologyAreasOfInterestOptions = ref([
   'Software Engineering',
   'Sourcing / Supply Chain',
   'Test Engineering',
+  'UX Design',
 ]);
 const selectedTechnologyAreasOfInterest = ref([]);
 const showThankYouModal = ref(false);
