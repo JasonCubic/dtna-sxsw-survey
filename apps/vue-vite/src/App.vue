@@ -62,8 +62,8 @@ h1.survey-cta {
 
 .sxsw-text {
   position: relative;
-  top: 39px;
-  left: -24px;
+  top: 49px;
+  left: -15px;
 }
 
 .navbar.bg-dark {

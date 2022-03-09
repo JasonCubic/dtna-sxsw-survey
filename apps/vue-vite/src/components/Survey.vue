@@ -279,4 +279,36 @@ button#submit-btn {
 #linkedin-btn {
   background-color: #0077b5;
 }
+
+.vs__dropdown-toggle {
+  background: white !important;
+  padding: 4px 2px 4px 0 !important;
+}
+
+.vs__dropdown-option {
+  color: #000; /* Overrides most CSS frameworks */
+}
+
+.vs__dropdown-menu {
+  color: #000 !important;
+}
+
+.vs__dropdown-option--highlight {
+  background: #000 !important;
+  color: #fff;
+}
+
+span.vs__selected {
+  padding: 4px;
+  background: #000;
+  color: white;
+  border-radius: 25px;
+  padding-right: 10px;
+  margin: 2px 0 2px 4px;
+  padding-left: 8px;
+}
+
+.vs__deselect path {
+  fill: #fff !important;
+}
 </style>
