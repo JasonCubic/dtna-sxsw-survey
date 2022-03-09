@@ -311,4 +311,8 @@ span.vs__selected {
 .vs__deselect path {
   fill: #fff !important;
 }
+
+#vs1__combobox {
+  color: #6c757d !important;
+}
 </style>
