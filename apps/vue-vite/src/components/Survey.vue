@@ -176,7 +176,7 @@ function handleFormSubmitted(event) {
 
         <div class="row mb-2" :class="{ 'was-validated': showFormValidation }">
           <label for="surveyee-linkedin" class="col-form-label">
-            Linkedin Profile
+            LinkedIn Profile
           </label>
           <div class="">
             <input
@@ -184,7 +184,7 @@ function handleFormSubmitted(event) {
               class="form-control"
               name="surveyeeLinkedin"
               id="surveyee-linkedin"
-              placeholder="URL to your Linkedin Profile"
+              placeholder="URL to your LinkedIn Profile"
               maxlength="90"
               :disabled="formIsSubmitting === true"
             >
@@ -244,7 +244,8 @@ function handleFormSubmitted(event) {
       <p class="text-center">In the meantime check out our open positions on LinkedIn.</p>
       <div class="d-grid">
         <a
-          id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/company/daimlertrucknorthamerica"
+          // eslint-disable-next-line max-len
+          id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/jobs/daimler-truck-north-america-jobs-worldwide?f_C=2263179&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
           role="button"
         >
           <img src="/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkedIn"></a>
