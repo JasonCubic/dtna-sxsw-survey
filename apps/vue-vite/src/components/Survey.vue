@@ -244,12 +244,16 @@ function handleFormSubmitted(event) {
       <p class="text-center">Someone from Daimler Truck North America will be in touch soon!</p>
       <p class="text-center">In the meantime check out our open positions on LinkedIn.</p>
       <div class="d-grid">
+        <!-- eslint-disable max-len -->
         <a
-          // eslint-disable-next-line max-len
-          id="linkedin-btn" class="btn btn-primary" href="https://www.linkedin.com/jobs/daimler-truck-north-america-jobs-worldwide?f_C=2263179&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+          id="linkedin-btn"
+          class="btn btn-primary"
+          href="https://www.linkedin.com/jobs/daimler-truck-north-america-jobs-worldwide?f_C=2263179&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
           role="button"
         >
-          <img src="/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkedIn"></a>
+          <img src="/Icon-linkedin.svg" class="img-fluid li-icon" alt="LinkedIn">
+        </a>
+        <!-- eslint-enable max-len -->
       </div>
     </template>
     <template #footer>
