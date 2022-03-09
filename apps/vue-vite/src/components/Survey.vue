@@ -3,18 +3,24 @@ import { ref } from 'vue';
 import ModalTemplate from './ModalTemplate.vue';
 
 const technologyAreasOfInterestOptions = ref([
-  'Software Engineering',
-  'Product Management',
-  'Sales Engineer',
-  'Technical Program Manager',
-  'Test Engineering',
-  'Electrical Engineering',
-  'Network Engineering',
-  'Sourcing / Supply Chain',
-  'Mechanical Engineering',
-  'Data Science',
+  '3D Printing',
+  'AI',
   'Analytics',
-  'Product Strategy',
+  'Autonomous',
+  'Data Science',
+  'Electric Mobility',
+  'Electrical Engineering',
+  'Machine Learning',
+  'Mechanical Engineering',
+  'Mechatronics',
+  'Network Engineering',
+  'Product Management',
+  'Sales, Product Strategy',
+  'Robotics',
+  'Sales Engineer',
+  'Software Engineering',
+  'Sourcing / Supply Chain',
+  'Test Engineering',
 ]);
 const selectedTechnologyAreasOfInterest = ref([]);
 const showThankYouModal = ref(false);
